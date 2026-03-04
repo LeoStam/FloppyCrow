@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://byoogol0wbr56"]
+
+[ext_resource type="Script" uid="uid://dpcid5gyatll8" path="res://scripts/poles.gd" id="1_xrten"]
+[ext_resource type="Texture2D" uid="uid://b7tiwruaplvoa" path="res://126.png" id="2_72qjj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbrof"]
+size = Vector2(60, 220)
+
+[node name="Poles00" type="Node2D"]
+position = Vector2(1913, 194)
+script = ExtResource("1_xrten")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-6.9999456, 32.000008)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("2_72qjj")
+flip_v = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
+position = Vector2(4.9999995, 682)
+scale = Vector2(3.2, 2.915493)
+texture = ExtResource("2_72qjj")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(10.999999, 143.33334)
+scale = Vector2(1, 0.99999976)
+polygon = PackedVector2Array(16, 87.66669, -73, -4.3333435, -55, -211.33337, -74, -335.3334, 25, -334.3334, 54, -89.33334)
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(4, 892.99994)
+scale = Vector2(1, 0.9999999)
+polygon = PackedVector2Array(-34, -404.81256, -49, -382.81256, -42, 26.1875, 61, 30.1875, 49, -385.81256)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(6, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-4, -180)
+shape = SubResource("RectangleShape2D_sbrof")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

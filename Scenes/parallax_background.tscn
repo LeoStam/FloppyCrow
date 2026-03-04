@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://1flkp13xohe7"]
+
+[ext_resource type="Script" uid="uid://def7si82ysybi" path="res://scripts/background.gd" id="1_haapo"]
+[ext_resource type="Texture2D" uid="uid://dyxnyqnnau8u5" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0010_1.png" id="2_haapo"]
+[ext_resource type="Texture2D" uid="uid://bmltau1c7p1m" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0009_2.png" id="3_8lfqf"]
+[ext_resource type="Texture2D" uid="uid://hkiktcoo8h5j" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0008_3.png" id="4_6sdse"]
+[ext_resource type="Texture2D" uid="uid://bh6excb1woloh" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0006_4.png" id="5_stt5h"]
+[ext_resource type="Texture2D" uid="uid://6hcmpc0f3plq" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0005_5.png" id="6_ttylo"]
+[ext_resource type="Texture2D" uid="uid://cm5qclwedr4n0" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0003_6.png" id="7_vdor4"]
+[ext_resource type="Texture2D" uid="uid://cje82myv5en5d" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0007_Lights.png" id="8_5k2te"]
+[ext_resource type="Texture2D" uid="uid://da426xjmuaoa4" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0000_9.png" id="9_wcaio"]
+[ext_resource type="Texture2D" uid="uid://dct6g23mvtbfm" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0001_8.png" id="10_5tk3q"]
+
+[node name="ParallaxBackground" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_haapo")
+
+[node name="Layer0" type="Parallax2D" parent="."]
+scale = Vector2(4.6563888, 3.241926)
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1920, 1080)
+autoscroll = Vector2(-10, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer0"]
+texture = ExtResource("2_haapo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Layer0"]
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("3_8lfqf")
+
+[node name="Layer1" type="Parallax2D" parent="."]
+scale = Vector2(4.6563888, 3.241926)
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1920, 1080)
+autoscroll = Vector2(-30, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer1"]
+texture = ExtResource("4_6sdse")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Layer1"]
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("5_stt5h")
+
+[node name="Layer2" type="Parallax2D" parent="."]
+scale = Vector2(4.6493106, 3.1630294)
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(1920, 1080)
+autoscroll = Vector2(-50, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer2"]
+texture = ExtResource("5_stt5h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Layer2"]
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("6_ttylo")
+
+[node name="Layer3" type="Parallax2D" parent="."]
+scale = Vector2(4.6563888, 3.241926)
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(1920, 1080)
+autoscroll = Vector2(-80, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer3"]
+texture = ExtResource("7_vdor4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Layer3"]
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("8_5k2te")
+
+[node name="Layer4" type="Parallax2D" parent="."]
+scale = Vector2(4.6563888, 3.241926)
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(1920, 1080)
+autoscroll = Vector2(-110, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer4"]
+scale = Vector2(0.99999994, 0.9999999)
+texture = ExtResource("10_5tk3q")
+
+[node name="Layer5" type="Parallax2D" parent="."]
+scale = Vector2(4.6563888, 3.241926)
+scroll_scale = Vector2(1.2, 1.2)
+repeat_size = Vector2(1920, 1080)
+autoscroll = Vector2(-150, 0)
+follow_viewport = false
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Layer5"]
+scale = Vector2(1, 0.9999999)
+texture = ExtResource("9_wcaio")
