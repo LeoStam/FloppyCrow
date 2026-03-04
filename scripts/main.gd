@@ -102,3 +102,13 @@ func restart_game():
 	#if Autoload.current_game_state == Autoload.GameState.GAME_OVER:
 		#if Input.is_action_just_pressed("interact"):
 			#start_game()  # Θα χρειαστεί να υλοποιήσεις την επανεκκίνηση
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_quit_2_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.

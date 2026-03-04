@@ -87,13 +87,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GameOver" type="Panel" parent="CanvasLayer2"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+
+[node name="Quit2" type="Button" parent="CanvasLayer2/GameOver"]
+layout_mode = 0
+offset_left = 818.0
+offset_top = 605.0
+offset_right = 1078.2324
+offset_bottom = 685.0
+scale = Vector2(0.98925865, 1)
+theme_override_font_sizes/font_size = 25
+text = "GIVE UP"
 
 [node name="Label" type="Label" parent="CanvasLayer2/GameOver"]
 layout_mode = 1
@@ -114,15 +123,6 @@ label_settings = SubResource("LabelSettings_jjvhh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="Button" parent="CanvasLayer2/GameOver"]
-layout_mode = 0
-offset_left = 789.0
-offset_top = 600.0
-offset_right = 1079.0
-offset_bottom = 700.0
-theme_override_font_sizes/font_size = 25
-text = "Quit"
-
 [node name="Score" type="Label" parent="CanvasLayer2/GameOver"]
 layout_mode = 0
 offset_left = 601.0
@@ -132,3 +132,5 @@ offset_bottom = 387.0
 label_settings = SubResource("LabelSettings_kry3j")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer2/StartScreen/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer2/GameOver/Quit2" to="." method="_on_quit_2_pressed"]
