@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3ir376df04gd"]
+[gd_scene load_steps=10 format=3 uid="uid://d3ir376df04gd"]
 
 [ext_resource type="Script" uid="uid://blyusjbdydqg5" path="res://scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bo0pwsa6hw5ue" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -16,6 +16,13 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_kry3j"]
 font_size = 80
 
+[sub_resource type="Gradient" id="Gradient_8gbba"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jjvhh"]
+gradient = SubResource("Gradient_8gbba")
+fill_from = Vector2(0.3, 0.4875)
+fill_to = Vector2(0.3875, 0.63125)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
 
@@ -23,7 +30,7 @@ script = ExtResource("1_8gbba")
 position = Vector2(0, -200)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.7999999999999998
 one_shot = true
 autostart = true
 
@@ -87,6 +94,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GameOver" type="Panel" parent="CanvasLayer2"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -130,6 +138,11 @@ offset_top = 110.0
 offset_right = 1275.0
 offset_bottom = 387.0
 label_settings = SubResource("LabelSettings_kry3j")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1920, 1920)
+color = Color(0.48714352, 0.030883789, 0.98828125, 1)
+texture = SubResource("GradientTexture2D_jjvhh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer2/StartScreen/Quit" to="." method="_on_quit_pressed"]

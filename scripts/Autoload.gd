@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 func activate_ability(ability_type : String, duration : float)-> void:
 	match ability_type:
 		"speed":
-			speed_mult = 0.5
+			speed_mult = 1.5
 			gravity_mult = 1.2
 			jump_mult = 1.2
 			timer_mult = 1 / speed_mult
@@ -66,9 +66,9 @@ func activate_ability(ability_type : String, duration : float)-> void:
 			ability_timer = duration
 			print("Speed active")
 		"control":
-			gravity_mult = 0.5
-			speed_mult = 0.8
-			jump_mult = 0.5
+			gravity_mult = 0.6
+			speed_mult = 1
+			jump_mult = 0.6
 			ability_active = true
 			ability_timer = duration
 			print("Control active")

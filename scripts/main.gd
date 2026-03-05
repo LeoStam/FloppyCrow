@@ -50,7 +50,7 @@ func _on_timer_timeout() -> void:
 	
 
 func _on_score_update():
-	if Autoload.score % 5 ==0 and Autoload.score > 0 and $Timer.wait_time >= 1.0:
+	if Autoload.score % 5 ==0 and Autoload.score > 0 and $Timer.wait_time >= 0.6:
 		$Timer.wait_time -= 0.1
 
 
@@ -62,7 +62,7 @@ func restart_game():
 	# Καθαρισμός όλων των poles και abilities από την οθόνη
 	for child in get_children():
 		# Μην διαγράφεις τα CanvasLayer, Timers, Player κλπ.
-		if child is Node2D and child.name != "Player" and child.name != "CanvasLayer" and child.name != "CanvasLayer2" and child.name != "ParallaxBackground":
+		if child is Node2D and child.name != "Player" and child.name != "PointLight2D" and child.name != "CanvasLayer" and child.name != "CanvasLayer2" and child.name != "ParallaxBackground":
 			child.queue_free()
 	
 	# Επαναφορά θέσης παίκτη

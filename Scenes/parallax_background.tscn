@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1flkp13xohe7"]
+[gd_scene load_steps=12 format=3 uid="uid://1flkp13xohe7"]
 
 [ext_resource type="Script" uid="uid://def7si82ysybi" path="res://scripts/background.gd" id="1_haapo"]
 [ext_resource type="Texture2D" uid="uid://dyxnyqnnau8u5" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0010_1.png" id="2_haapo"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://da426xjmuaoa4" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0000_9.png" id="9_wcaio"]
 [ext_resource type="Texture2D" uid="uid://dct6g23mvtbfm" path="res://Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0001_8.png" id="10_5tk3q"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yixo"]
+size = Vector2(4320, 43)
+
 [node name="ParallaxBackground" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_haapo")
@@ -20,7 +23,6 @@ scale = Vector2(4.6563888, 3.241926)
 scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1920, 1080)
 autoscroll = Vector2(-10, 0)
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer0"]
 texture = ExtResource("2_haapo")
@@ -34,7 +36,6 @@ scale = Vector2(4.6563888, 3.241926)
 scroll_scale = Vector2(0.3, 0.3)
 repeat_size = Vector2(1920, 1080)
 autoscroll = Vector2(-30, 0)
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer1"]
 texture = ExtResource("4_6sdse")
@@ -48,12 +49,12 @@ scale = Vector2(4.6493106, 3.1630294)
 scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(1920, 1080)
 autoscroll = Vector2(-50, 0)
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer2"]
 texture = ExtResource("5_stt5h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Layer2"]
+position = Vector2(-1.0754284, 6.0068994)
 scale = Vector2(1.0000001, 1)
 texture = ExtResource("6_ttylo")
 
@@ -62,12 +63,12 @@ scale = Vector2(4.6563888, 3.241926)
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1920, 1080)
 autoscroll = Vector2(-80, 0)
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer3"]
 texture = ExtResource("7_vdor4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Layer3"]
+modulate = Color(0.68359375, 0.668782, 0.30441284, 1)
 scale = Vector2(1.0000001, 1)
 texture = ExtResource("8_5k2te")
 
@@ -76,7 +77,6 @@ scale = Vector2(4.6563888, 3.241926)
 scroll_scale = Vector2(0.9, 0.9)
 repeat_size = Vector2(1920, 1080)
 autoscroll = Vector2(-110, 0)
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer4"]
 scale = Vector2(0.99999994, 0.9999999)
@@ -88,8 +88,23 @@ scroll_scale = Vector2(1.2, 1.2)
 repeat_size = Vector2(1920, 1080)
 autoscroll = Vector2(-150, 0)
 follow_viewport = false
-metadata/_edit_group_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Layer5"]
 scale = Vector2(1, 0.9999999)
 texture = ExtResource("9_wcaio")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-15, 115)
+shape = SubResource("RectangleShape2D_0yixo")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(3, 1398)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-3, -60.5)
+shape = SubResource("RectangleShape2D_0yixo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
